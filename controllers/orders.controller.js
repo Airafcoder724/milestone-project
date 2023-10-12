@@ -1,4 +1,5 @@
-const stripe = require('stripe')('sk_test_51O06XLSC4Sx45K9a6XS3c9PJnQ1vHGEi2loN3wLNVPSkIiF5gZRP2L9g9dcvXMsgNyFOuEmuXE5oH8RWSroZl1EZ00zfk1OCQj');
+require('dotenv').config()
+const stripe = require('stripe')(process.env.STRIPE_ID);
 const Order = require('../models/order.modal');
 const User = require('../models/user.model');
 
