@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path')
 
 const express = require('express')
@@ -50,9 +51,15 @@ app.use(notFoundMiddleware)
 app.use(errorHandler);
 
 db.connectToDatabase().then(function(){
-    app.listen(3000 , ()=>{
-        console.log('server connected')
-    })
+    
+    let port = 3000
+
+    if (process.env.PORT) {
+        port = process.env.PORT
+    }
+    app.listen(port, function () {
+    console.log("Server started on port" , port);
+    });
 }).catch(function(error){
     console.log('failed to connect databse')
     console.log(error)
@@ -60,3 +67,6 @@ db.connectToDatabase().then(function(){
 
 
 
+// app.listen(3000 , ()=>{
+//     console.log('server connected')
+// })

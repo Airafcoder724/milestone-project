@@ -5,15 +5,12 @@ const User = require('../models/user.model');
 async function getOrders(req, res , next) {
   try {
     const orders = await Order.findAllForUser(res.locals.uid);
-    console.log(orders)
     res.render('customer/orders/all-orders', {
       orders: orders,
     });
   } catch (error) {
     next(error);
   }
-
-
 }
 
 async function addOrder(req, res, next) {
@@ -41,7 +38,7 @@ async function addOrder(req, res, next) {
       return {
         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
         price_data:{
-          currency : 'inr',
+          currency : 'usd',
           product_data:{
             name:item.product.title,
           },
