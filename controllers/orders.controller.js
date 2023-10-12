@@ -50,8 +50,8 @@ async function addOrder(req, res, next) {
     
   }),
     mode: 'payment',
-    success_url: `http://localhost:3000/orders/success`,
-    cancel_url: `http://localhost:3000/orders/cancel`,
+    success_url: `https://e-commarce-project.onrender.com/orders/success`,
+    cancel_url: `https://e-commarce-project.onrender.com/orders/cancel`,
   });
 
   res.redirect(303, session.url);
