@@ -39,7 +39,7 @@ async function addOrder(req, res, next) {
       return {
         // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
         price_data:{
-          currency : 'usd',
+          currency : 'inr',
           product_data:{
             name:item.product.title,
           },
