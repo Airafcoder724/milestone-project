@@ -1,4 +1,4 @@
-require('dotenv').config()
+const dotenv = require('dotenv').config()
 const stripe = require('stripe')(process.env.STRIPE_ID);
 const Order = require('../models/order.modal');
 const User = require('../models/user.model');
